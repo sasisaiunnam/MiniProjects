@@ -13,7 +13,7 @@ function Speedometer() {
     }
 
     const speeddecrement =()=>{
-       (speed==0?alert("Zero mph"):setSpeed(pre=>pre-10))
+       (speed===0?alert("Zero mph"):setSpeed(pre=>pre-10))
     }
 
   return (

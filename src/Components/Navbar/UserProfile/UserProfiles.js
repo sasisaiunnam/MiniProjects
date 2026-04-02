@@ -52,7 +52,7 @@ const changeinput =(e)=>{
   }
 ]
 
-  const [inputvalue ,setinputvalue] =useState(user)
+  const [inputvalue] =useState(user)
 
   const searchresult =inputvalue.filter(prev=>prev.name.toLowerCase().includes(inpserach.toLowerCase()))
 
