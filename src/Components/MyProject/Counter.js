@@ -1,40 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import './Counter.css';
 
 function Counter() {
+    const [count, setCount] = useState(0);
 
-    const [count , setCount] = useState(0);
+    const increment = () => setCount(prev => prev + 1);
+    const decrement = () => setCount(prev => prev - 1);
+    const reset = () => setCount(0);
 
-    function increment(){
-      
-       setCount((prevalue)=>{
-        console.log(prevalue+1)
-        return prevalue+1;
-
-       })
-    }
-    function decrement(){
-      
-        setCount((prevalue)=>{
-
-        return prevalue-1;
-
-       })
-    }
-
-  return (
-    <div>
-        <div style={{border:"2px" ,backgroundColor:"lightblue",width: "90%",height:"200px",margin:"20px", textAlign:"center" ,bottom:"50px"}}>
-            <h3 style={{color:"violet",fontSize:"30px"}}>Counter App</h3>
-            <p style={{fontSize:"30px",color:"red"}} >{count}</p>
-            
-            <button style={{padding:"5px", margin:"5px"}} onClick={increment}>Increment</button>
-            <button style={{padding:"5px", margin:"5px"}} onClick={decrement}>Decrement</button>
-            <button style={{padding:"5px", margin:"5px"}} onClick={()=>setCount(prevalue=>(prevalue=0))}>Reset</button>
-           
+    return (
+        <div className="counter-wrapper">
+            <div className="counter-card">
+                <h3 className="counter-title">Counter App</h3>
+                <p className="counter-display">{count}</p>
+                
+                <div className="button-group">
+                    <button className="btn btn-inc" onClick={increment}>Increment</button>
+                    <button className="btn btn-dec" onClick={decrement}>Decrement</button>
+                    <button className="btn btn-reset" onClick={reset}>Reset</button>
+                </div>
+            </div>
         </div>
-      
-    </div>
-  )
+    );
 }
 
-export default Counter
+export default Counter;

@@ -1,134 +1,95 @@
-/* .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-}
-
-.theme-section {
-  background: #e8f5e9;
-  padding: 20px;
-  margin-top: 30px;
-  border-radius: 10px;
-}
-
-.weather-section {
-  background: #e8f5e9;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.counter-section {
-  background: #e3f2fd;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.profile-section {
-  background: #f3e5f5;
-  padding: 20px;
-  border-radius: 10px;
-  
-}
-.section{
-  background: #f3e5f5;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 10px 10px 10px 10px rgb(161, 134, 97);
-  font-size: 20px;
-} */
-
-/* General Reset & Background */
-
-:root {
-  --primary: #6366f1;
-  --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  --glass-bg: rgba(255, 255, 255, 0.8);
-  --text: #1e293b;
-}
-
+/* Base Container */
 .app-container {
   min-height: 100vh;
-  background: var(--bg-gradient);
-  border-radius: 20px;
-  padding: 20px;
+  background-color: #121212; /* Deep background */
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Navigation Bar */
+/* Horizontal Scrollable Navbar */
 .top-nav {
-  width: 100%;
-  background: white;
-  border-radius: 20px;
-  padding: 1rem 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  background-color: #353935; /* Onyx Black */
+  border-bottom: 1px solid #484d48;
+  padding: 10px 0;
   position: sticky;
   top: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: center;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .nav-scroll {
   display: flex;
-  gap: 10px;
-  overflow-x: auto;
+  overflow-x: auto; /* Enable horizontal scroll */
+  white-space: nowrap;
   padding: 0 20px;
-  scrollbar-width: none; /* Hide scrollbar for Chrome/Safari */
+  gap: 12px;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
 }
 
+.nav-scroll::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+/* Navigation Buttons */
 .nav-btn {
-  padding: 10px 20px;
-  border: none;
-  background: #f1f5f9;
-  color: #64748b;
-  border-radius: 30px;
+  background: #28282b;
+  color: #8fa18f;
+  border: 1px solid #484d48;
+  padding: 8px 20px;
+  border-radius: 20px;
   cursor: pointer;
-  font-weight: 600;
-  white-space: nowrap;
+  font-size: 0.9rem;
+  font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .nav-btn:hover {
-  background: #e2e8f0;
+  background-color: #484d48;
+  color: #ffffff;
 }
 
 .nav-btn.active {
-  background: var(--primary);
+  background-color: #4caf50; /* Primary Accent */
   color: white;
-  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+  border-color: #4caf50;
+  box-shadow: 0 0 15px rgba(76, 175, 80, 0.4);
 }
 
-/* Display Area */
+/* Main Display Area */
 .display-area {
-  flex-grow: 1;
-  width: 100%;
-  max-width: 900px;
+  flex: 1;
+  padding: 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
+  align-items: flex-start;
 }
 
 .component-window {
   width: 100%;
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 24px;
-  padding: 30px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-  animation: slideUp 0.4s ease-out;
+  max-width: 1200px;
+  animation: fadeIn 0.4s ease-out;
 }
 
-/* Smooth Entrance Animation */
-@keyframes slideUp {
+/* Floating Theme Switcher */
+.floating-theme {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1001;
+  background: #353935;
+  padding: 10px;
+  border-radius: 50%;
+  border: 1px solid #484d48;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -136,8 +97,14 @@
   }
 }
 
-.floating-theme {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .nav-btn {
+    padding: 6px 15px;
+    font-size: 0.8rem;
+  }
+  
+  .display-area {
+    padding: 10px;
+  }
 }

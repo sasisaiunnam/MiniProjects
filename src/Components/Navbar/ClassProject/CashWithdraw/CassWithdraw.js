@@ -1,5 +1,5 @@
 import React, { useState} from 'react'
-import "./index.css";
+import "./CashWithdraw.css";
 
 function CassWithdraw() {
 
@@ -21,64 +21,45 @@ function CassWithdraw() {
  
 console.log("withdraw amount",withdraw)
 console.log("deposit amount",deposit)
-  return (
-   <>
-      <div className="page-wrapper">
-  <div className="cash">
-    <h2>Cash Withdraw</h2>
-    <p className="balance">Your balance ₹{balance}</p>
+  // ... existing imports and state logic ...
 
-    <div className="section">
-      <p className="section-title">Cash Withdraw</p>
-      <input
-        type="text"
-        placeholder="Choose sum (In Rupees)"
-        value={withdraw}
-        readOnly
-      />
-      <button
-        className="submit-btn withdraw-btn"
-        onClick={handle}
-      >
-        Submit
-      </button>
+return (
+  <div className="page-wrapper">
+    <div className="cash">
+      <h2>ATM Dashboard</h2>
+      <p className="balance">Your balance: ₹{balance}</p>
 
-      <div className="buttons">
-        <button onClick={() => setwithdraw(50)}>50</button>
-        <button onClick={() => setwithdraw(100)}>100</button>
-        <button onClick={() => setwithdraw(200)}>200</button>
-        <button onClick={() => setwithdraw(500)}>500</button>
-      </div>
-    </div>
+      {/* New Wrapper for side-by-side layout */}
+      <div className="sections-container">
+        
+        {/* Withdraw Section */}
+        <div className="section">
+          <p className="section-title">Withdraw</p>
+          <input type="text" value={withdraw} placeholder="Amount" readOnly />
+          <button className="submit-btn withdraw-btn" onClick={handle}>Submit</button>
+          <div className="buttons">
+            {[50, 100, 200, 500].map(amt => (
+              <button key={amt} onClick={() => setwithdraw(amt)}>{amt}</button>
+            ))}
+          </div>
+        </div>
 
-    {/* Deposit Section */}
-    <div className="section">
-      <p className="section-title">Cash Deposit</p>
-      <input
-        type="text"
-        placeholder="Choose sum (In Rupees)"
-        value={deposit}
-        readOnly
-      />
-      <button
-        className="submit-btn deposit-btn"
-        onClick={handledeposit}
-      >
-        Submit
-      </button>
+        {/* Deposit Section */}
+        <div className="section">
+          <p className="section-title">Deposit</p>
+          <input type="text" value={deposit} placeholder="Amount" readOnly />
+          <button className="submit-btn deposit-btn" onClick={handledeposit}>Submit</button>
+          <div className="buttons">
+            {[50, 100, 200, 500].map(amt => (
+              <button key={amt} onClick={() => setdeposit(amt)}>{amt}</button>
+            ))}
+          </div>
+        </div>
 
-      <div className="buttons">
-        <button onClick={() => setdeposit(50)}>50</button>
-        <button onClick={() => setdeposit(100)}>100</button>
-        <button onClick={() => setdeposit(200)}>200</button>
-        <button onClick={() => setdeposit(500)}>500</button>
       </div>
     </div>
   </div>
-</div>
-
-    </>
-  )
+);
 }
 
 export default CassWithdraw

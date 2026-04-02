@@ -1,5 +1,5 @@
 import React, {  useState } from 'react'
-import "../ClassStyle.css"
+import "./LettersCalculator.css"
 
 function LettersCalculator() {
 

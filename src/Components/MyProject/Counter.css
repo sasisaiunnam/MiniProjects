@@ -1,0 +1,80 @@
+/* Container to center the card on the page */
+.counter-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* The Main Card */
+.counter-card {
+    background-color: #353935; /* Onyx Black */
+    width: 100%;
+    max-width: 500px; /* Limits width on desktop */
+    min-height: 250px;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #484d48;
+}
+
+/* Title */
+.counter-title {
+    color: #cf9fff; /* Soft violet */
+    font-size: 2rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* Number Display */
+.counter-display {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #ff4d4d; /* Vibrant red */
+    margin: 20px 0;
+}
+
+/* Button Layout */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Base Button Styling */
+.btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 1; /* Buttons grow to fill space */
+    min-width: 120px;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Button Colors */
+.btn-inc { background-color: #4caf50; color: white; }
+.btn-dec { background-color: #2196f3; color: white; }
+.btn-reset { background-color: #757575; color: white; }
+
+/* Hover effects */
+.btn:hover {
+    filter: brightness(1.2);
+}
+
+/* Responsive adjustments for very small phones */
+@media (max-width: 400px) {
+    .counter-display {
+        font-size: 3rem;
+    }
+    .btn {
+        width: 100%; /* Buttons stack vertically on tiny screens */
+    }
+}

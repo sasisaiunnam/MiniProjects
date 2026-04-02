@@ -63,10 +63,7 @@ const ProjectComponent = () => {
         </div>
       </main>
       
-    
-      <div className="floating-theme">
-        <SwitchTheme />
-      </div>
+  
     </div>
   );
 };

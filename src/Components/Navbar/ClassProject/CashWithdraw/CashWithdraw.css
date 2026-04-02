@@ -1,0 +1,52 @@
+/* Container for the two cards */
+.sections-container {
+  display: flex;
+  flex-direction: row; /* Side by side */
+  gap: 20px;           /* Space between columns */
+  justify-content: center;
+  align-items: stretch; /* Makes both sections equal height */
+}
+
+/* Update the main card width to accommodate two columns */
+.cash {
+  background-color: #353935;
+  border: 1px solid #484d48;
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 900px; /* Increased from 450px to fit both */
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Ensure individual sections take up equal space */
+.section {
+  flex: 1; 
+  background-color: #28282b;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #484d48;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Responsive: Stack them on mobile */
+@media (max-width: 768px) {
+  .sections-container {
+    flex-direction: column; /* Stacks vertically on small screens */
+  }
+  
+  .cash {
+    max-width: 450px;
+  }
+}
+
+/* Quick Select Buttons Grid (2x2 for tighter columns) */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}

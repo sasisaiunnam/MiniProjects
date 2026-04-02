@@ -1,0 +1,72 @@
+/* Center the component in the display window */
+.letter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #353935; /* Onyx Black */
+    border: 1px solid #484d48;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    margin: 40px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Heading Style */
+.letter h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* Input Field Styling */
+.letter input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #484d48;
+    background-color: #28282b; /* Slightly darker than card */
+    color: #4caf50; /* Green text for a "terminal" feel */
+    font-size: 1.1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 25px;
+}
+
+.letter input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+
+.letter input::placeholder {
+    color: #666;
+}
+
+/* Counter Button (Disabled Look) */
+.letter button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px; /* Pill shape */
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: default; /* Since it's a display button */
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
+    transition: transform 0.2s ease;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 480px) {
+    .letter {
+        padding: 25px;
+        margin: 20px;
+    }
+    
+    .letter h2 {
+        font-size: 1.4rem;
+    }
+}

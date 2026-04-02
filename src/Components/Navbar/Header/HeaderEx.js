@@ -1,28 +1,25 @@
-import React from 'react'
-import './HeaderEx.css'
+import React from 'react';
+import './HeaderEx.css';
 
+function HeaderEx({ users }) {
+    // Destructuring for cleaner code
+    const { unitNo, imageUrl, name, role } = users;
 
-function HeaderEx(props) {
-    const {users} = props;
-    const id = users.unitNo;
-    
-    console.log("id :",id)
-  return (
-    <li>
-      
-    <div className='display'>
-
-        <img src={users.imageUrl} alt="" />
-        <div>
-            <h2>{id}</h2>
-            <h1>{users.name}</h1>
-            <p>{users.role}</p>
-            
-        </div>
-    </div>
-
-    </li>
-  )
+    return (
+        <li className="header-item">
+            <div className='display'>
+                <img 
+                    src={imageUrl || 'https://via.placeholder.com/150'} 
+                    alt={`${name}'s profile`} 
+                />
+                <div className="info-container">
+                    <h2>ID: {unitNo}</h2>
+                    <h1>{name}</h1>
+                    <p>{role}</p>
+                </div>
+            </div>
+        </li>
+    );
 }
 
-export default HeaderEx
+export default HeaderEx;
