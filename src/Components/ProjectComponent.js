@@ -1,6 +1,5 @@
 
 import "./ProjectComponent.css";
-import SwitchTheme from "./MyProject/SwitchTheme";
 import WeatherApi from "./MyProject/WeatherApi";
 import Counter from "./MyProject/Counter";
 import UserProfiles from "./Navbar/UserProfile/UserProfiles";
