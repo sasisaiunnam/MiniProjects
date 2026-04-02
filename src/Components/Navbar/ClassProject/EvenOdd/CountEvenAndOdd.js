@@ -1,7 +1,7 @@
 
 
 import React, { useState } from 'react';
-import './ClassStyle.css';
+import "./Style.css";
 
 function CountEvenAndOdd() {
   const [evenNum, setEvenNum] = useState(0);

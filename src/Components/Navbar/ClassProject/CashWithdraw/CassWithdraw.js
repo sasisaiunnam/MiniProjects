@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useState} from 'react'
 import "./index.css";
 
 function CassWithdraw() {
@@ -9,7 +9,7 @@ function CassWithdraw() {
 
 
   const handle =()=>{
-    (balance!=0)?setBalance(prev=>prev-withdraw):alert("not balance")
+    (balance!==0)?setBalance(prev=>prev-withdraw):alert("not balance")
     setwithdraw("")
   }
 

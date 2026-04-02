@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import "../ClassStyle.css"
 
 function LettersCalculator() {
 
     const [value ,setvalue] = useState("")
-    const [count,setCount] =useState(0)
+   
    
     
     const changeinput =(e)=>{

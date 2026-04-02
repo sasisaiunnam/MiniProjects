@@ -11,7 +11,7 @@ function GoogleSearch() {
     }
 
     const Data = [{name:"Gopal"},{name:"Sasi"},{name:"Avinash"},{name:"Chandrashekar"},{name:"Basha"},{name:"Anil"},{name:"Naveen"}];
-    const [store,setStore] = useState(Data);
+    const [store] = useState(Data);
 
     const getStore = store.filter(data=>
         data.name.toLowerCase().includes(search.toLowerCase())
